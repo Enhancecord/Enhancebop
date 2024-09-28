@@ -8,16 +8,16 @@ import { app } from "electron";
 import { existsSync, mkdirSync, readdirSync, renameSync, rmdirSync } from "fs";
 import { dirname, join } from "path";
 
-const equibopDir = dirname(process.execPath);
+const enhancebopDir = dirname(process.execPath);
 
 export const PORTABLE =
     process.platform === "win32" &&
     !process.execPath.toLowerCase().endsWith("electron.exe") &&
-    !existsSync(join(equibopDir, "Uninstall Equibop.exe"));
+    !existsSync(join(enhancebopDir, "Uninstall Enhancebop.exe"));
 
-const LEGACY_DATA_DIR = join(app.getPath("appData"), "EquicordDesktop", "EquicordDesktop");
+const LEGACY_DATA_DIR = join(app.getPath("appData"), "EnhancecordDesktop", "EnhancecordDesktop");
 export const DATA_DIR =
-    process.env.EQUICORD_USER_DATA_DIR || (PORTABLE ? join(equibopDir, "Data") : join(app.getPath("userData")));
+    process.env.ENHANCECORD_USER_DATA_DIR || (PORTABLE ? join(enhancebopDir, "Data") : join(app.getPath("userData")));
 
 mkdirSync(DATA_DIR, { recursive: true });
 
@@ -30,7 +30,7 @@ if (existsSync(LEGACY_DATA_DIR)) {
         }
         rmdirSync(LEGACY_DATA_DIR);
         renameSync(
-            join(app.getPath("appData"), "EquicordDesktop", "IndexedDB"),
+            join(app.getPath("appData"), "EnhancecordDesktop", "IndexedDB"),
             join(DATA_DIR, "sessionData", "IndexedDB")
         );
     } catch (e) {
@@ -49,10 +49,10 @@ export const VENCORD_THEMES_DIR = join(DATA_DIR, "themes");
 // as otherwise "DATA_DIR" (which is used by ./settings) will be uninitialised
 export const VENCORD_DIR = (() => {
     const { State } = require("./settings") as typeof import("./settings");
-    return State.store.vencordDir ? join(State.store.vencordDir, "equibop") : join(SESSION_DATA_DIR, "equicord.asar");
+    return State.store.vencordDir ? join(State.store.vencordDir, "enhancebop") : join(SESSION_DATA_DIR, "enhancecord.asar");
 })();
 
-export const USER_AGENT = `Equibop/${app.getVersion()} (https://github.com/Equicord/Equibop)`;
+export const USER_AGENT = `Enhancebop/${app.getVersion()} (https://github.com/Enhancecord/Enhancebop)`;
 
 // dimensions shamelessly stolen from Discord Desktop :3
 export const MIN_WIDTH = 940;

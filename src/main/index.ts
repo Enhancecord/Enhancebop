@@ -25,7 +25,7 @@ if (IS_DEV) {
 }
 
 // Make the Vencord files use our DATA_DIR
-process.env.EQUICORD_USER_DATA_DIR = DATA_DIR;
+process.env.ENHANCECORD_USER_DATA_DIR = DATA_DIR;
 
 function init() {
     const { disableSmoothScroll, hardwareAcceleration, splashAnimationPath } = Settings.store;
@@ -77,7 +77,7 @@ function init() {
     });
 
     app.whenReady().then(async () => {
-        if (process.platform === "win32") app.setAppUserModelId("io.github.equicord.equibop");
+        if (process.platform === "win32") app.setAppUserModelId("io.github.enhancecord.enhancebop");
 
         createSplashWindow();
         addSplashLog();
@@ -103,10 +103,10 @@ function init() {
 
 if (!app.requestSingleInstanceLock({ IS_DEV })) {
     if (IS_DEV) {
-        console.log("Equibop is already running. Quitting previous instance...");
+        console.log("Enhancebop is already running. Quitting previous instance...");
         init();
     } else {
-        console.log("Equibop is already running. Quitting...");
+        console.log("Enhancebop is already running. Quitting...");
         app.quit();
     }
 } else {

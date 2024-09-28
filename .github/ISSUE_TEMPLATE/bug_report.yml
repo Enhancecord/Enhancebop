@@ -1,5 +1,5 @@
 name: 🐛 Bug / Crash Report
-description: Create a bug or crash report for Equibop
+description: Create a bug or crash report for Enhancebop
 labels: [bug]
 title: "[Bug] <title>"
 
@@ -9,9 +9,9 @@ body:
           value: |
               **Thanks 🩷 for taking the time to fill out this bug report! Before proceeding, please read the following**
 
-              Make sure a similar issue doesn't already exist by [searching the existing issues](https://github.com/Equicord/Equibop/issues?q=is%3Aissue) for keywords!
+              Make sure a similar issue doesn't already exist by [searching the existing issues](https://github.com/Enhancecord/Enhancebop/issues?q=is%3Aissue) for keywords!
 
-              Make sure both Equibop and Equicord are fully up to date. You can update Equicord by right-clicking the Equibop tray icon and pressing "Update Equicord"
+              Make sure both Enhancebop and Enhancecord are fully up to date. You can update Enhancecord by right-clicking the Enhancebop tray icon and pressing "Update Enhancecord"
 
               **DO NOT REPORT** any of the following issues:
               - Purely graphical glitches like flickering, scaling issues, etc: Issue with your gpu. Nothing we can do, update drivers or disable hardware acceleration
@@ -70,7 +70,7 @@ body:
       attributes:
           label: What is the expected behaviour?
           description: Simply detail what the expected behaviour is.
-          placeholder: I expect Equicord/Discord to open the ... page instead of ..., it prevents me from doing ...
+          placeholder: I expect Enhancecord/Discord to open the ... page instead of ..., it prevents me from doing ...
       validations:
           required: true
 
@@ -91,7 +91,7 @@ body:
       id: debug-logs
       attributes:
           label: Debug Logs
-          description: Run equicord from the command line. Include the relevant command line output here
+          description: Run enhancecord from the command line. Include the relevant command line output here
           value: |
               ```
               Replace this text with your crash-log. Do not remove the backticks
@@ -103,11 +103,11 @@ body:
       id: agreement-check
       attributes:
           label: Request Agreement
-          description: We only accept reports for bugs that happen on supported and up to date Equibop releases
+          description: We only accept reports for bugs that happen on supported and up to date Enhancebop releases
           options:
               - label: I have searched the existing issues and found no similar issue
                 required: true
-              - label: I am using the latest Equibop and Equicord versions
+              - label: I am using the latest Enhancebop and Enhancecord versions
                 required: true
               - label: This issue occurs on an official release (not just the AUR packages)
                 required: true

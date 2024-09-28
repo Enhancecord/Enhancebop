@@ -1,10 +1,10 @@
-# Equibop [<img src="/static/icon.png" width="225" align="right" alt="Equibop">](https://github.com/Equicord/Equibop)
+# Enhancebop [<img src="/static/icon.png" width="225" align="right" alt="Enhancebop">](https://github.com/Enhancecord/Enhancebop)
 
-[![Equicord](https://img.shields.io/badge/Equicord-grey?style=flat)](https://github.com/Equicord/Equicord)
-[![Tests](https://github.com/Equicord/Equibop/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Equicord/Equibop/actions/workflows/test.yml)
+[![Enhancecord](https://img.shields.io/badge/Enhancecord-grey?style=flat)](https://github.com/Enhancecord/Enhancecord)
+[![Tests](https://github.com/Enhancecord/Enhancebop/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Enhancecord/Enhancebop/actions/workflows/test.yml)
 [![Discord](https://img.shields.io/discord/1207691698386501634.svg?color=768AD4&label=Discord&logo=discord&logoColor=white)](https://discord.gg/5Xh2W87egW)
 
-Equibop is a fork of [Vesktop](https://github.com/Vencord/Vesktop).
+Enhancebop is a fork of [Vesktop](https://github.com/Vencord/Vesktop).
 
 You can join our [discord server](https://discord.gg/5Xh2W87egW) for commits, changes, chat or even support.<br></br>
 
@@ -15,7 +15,7 @@ You can join our [discord server](https://discord.gg/5Xh2W87egW) for commits, ch
 
 **Extra included changes**
 
--   Equicord preinstalled
+-   Enhancecord preinstalled
 -   Custom Splash animations from [this PR](https://github.com/Vencord/Vesktop/pull/355)
 -   Tray Customization & Voice detection and Badge from [this PR](https://github.com/Vencord/Vesktop/pull/517)
 -   Remove (#) title prefix when Notification Badge option is toggled from [this PR](https://github.com/Vencord/Vesktop/pull/686)
@@ -31,34 +31,34 @@ You can join our [discord server](https://discord.gg/5Xh2W87egW) for commits, ch
 If you don't know the difference, pick the Installer.
 
 - Installer
-  - [Universal](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-win.exe)
-  - [x64 / amd64](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-win-x64.exe)
-  - [Arm® 64](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-win-arm64.exe)
+  - [Universal](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-win.exe)
+  - [x64 / amd64](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-win-x64.exe)
+  - [Arm® 64](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-win-arm64.exe)
 - Portable
-  - [x64 / amd64](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-win-x64.zip)
-  - [Arm® 64](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-win-arm64.zip)
+  - [x64 / amd64](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-win-x64.zip)
+  - [Arm® 64](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-win-arm64.zip)
 
 ### Mac
 
 These work on both M Series and Intel Series Macs
--   [DMG](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-mac-universal.dmg)
--   [ZIP](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-mac-universal.zip)
+-   [DMG](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-mac-universal.dmg)
+-   [ZIP](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-mac-universal.zip)
 
 ### Linux
-[![equibop](https://img.shields.io/badge/AVAILABLE_ON_THE_AUR-333232?style=for-the-badge&logo=arch-linux&logoColor=0F94D2&labelColor=%23171717)](https://aur.archlinux.org/packages?O=0&K=equibop)
+[![enhancebop](https://img.shields.io/badge/AVAILABLE_ON_THE_AUR-333232?style=for-the-badge&logo=arch-linux&logoColor=0F94D2&labelColor=%23171717)](https://aur.archlinux.org/packages?O=0&K=enhancebop)
 
 If you don't know the difference, pick amd64.
 
 - amd64 / x86_64
-    - [AppImage](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x86_64.AppImage)
-    - [Ubuntu/Debian (.deb)](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-amd64.deb)
-    - [Fedora/RHEL (.rpm)](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x86_64.rpm)
-    - [tarball](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x64.tar.gz)
+    - [AppImage](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-linux-x86_64.AppImage)
+    - [Ubuntu/Debian (.deb)](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-linux-amd64.deb)
+    - [Fedora/RHEL (.rpm)](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-linux-x86_64.rpm)
+    - [tarball](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-linux-x64.tar.gz)
 - Arm® 64 / aarch64
-    - [AppImage](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.AppImage)
-    - [Ubuntu/Debian (.deb)](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.deb)
-    - [Fedora/RHEL (.rpm)](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-aarch64.rpm)
-    - [tarball](https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.tar.gz)
+    - [AppImage](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-linux-arm64.AppImage)
+    - [Ubuntu/Debian (.deb)](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-linux-arm64.deb)
+    - [Fedora/RHEL (.rpm)](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-linux-aarch64.rpm)
+    - [tarball](https://github.com/Enhancecord/Enhancebop/releases/latest/download/Enhancebop-linux-arm64.tar.gz)
 
 ## Building from Source
 
@@ -68,8 +68,8 @@ Packaging will create builds in the dist/ folder
 > On Windows, if you run the test script, you will get test errors about equimic, you can ignore these as it's a linux only module.
 
 ```sh
-git clone https://github.com/Equicord/Equibop
-cd Equibop
+git clone https://github.com/Enhancecord/Enhancebop
+cd Enhancebop
 
 # Install Dependencies
 pnpm i
