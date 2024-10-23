@@ -8,9 +8,11 @@ import "./ipc";
 
 import { app, BrowserWindow, nativeTheme, net, protocol } from "electron";
 import { autoUpdater } from "electron-updater";
+import { writeFileSync } from "fs";
 
 import { DATA_DIR } from "./constants";
 import { createFirstLaunchTour } from "./firstLaunch";
+import { socketFile } from "./keybinds";
 import { createWindows, mainWin } from "./mainWindow";
 import { registerMicrophonePermissionsHandler, registerVideoPermissionsHandler } from "./mediaPermissions";
 import { registerScreenShareHandler } from "./screenShare";
@@ -18,6 +20,15 @@ import { Settings, State } from "./settings";
 import { addSplashLog, createSplashWindow } from "./splash";
 import { isDeckGameMode } from "./utils/steamOS";
 
+if (process.platform === "linux") {
+    const hasToggleMic = process.argv.includes("--toggle-mic");
+    const hasToggleDeafen = process.argv.includes("--toggle-deafen");
+    if (hasToggleMic || hasToggleDeafen) {
+        const command = hasToggleMic ? "VCD_TOGGLE_SELF_MUTE\n" : "VCD_TOGGLE_SELF_DEAF\n";
+        writeFileSync(socketFile, command);
+        process.exit(0);
+    }
+}
 if (IS_DEV) {
     require("source-map-support").install();
 } else {
@@ -60,6 +71,9 @@ function init() {
     //
     // WidgetLayering (Vencord Added): Fix DevTools context menus https://github.com/electron/electron/issues/38790
     disabledFeatures.push("WinRetrieveSuggestionsOnlyOnDemand", "HardwareMediaKeyHandling", "MediaSessionService");
+
+    // Support TTS on Linux using speech-dispatcher
+    app.commandLine.appendSwitch("enable-speech-dispatcher");
 
     app.commandLine.appendSwitch("enable-features", [...new Set(enabledFeatures)].filter(Boolean).join(","));
     app.commandLine.appendSwitch("disable-features", [...new Set(disabledFeatures)].filter(Boolean).join(","));

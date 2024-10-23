@@ -14,6 +14,7 @@ import {
     nativeTheme,
     screen,
     session,
+    systemPreferences,
     Tray
 } from "electron";
 import { rm } from "fs/promises";
@@ -36,6 +37,7 @@ import {
     MIN_WIDTH,
     VENCORD_DIR
 } from "./constants";
+import { initKeybinds } from "./keybinds";
 import { Settings, State, VencordSettings } from "./settings";
 import { addSplashLog, splash } from "./splash";
 import { setTrayIcon } from "./tray";
@@ -526,5 +528,22 @@ export async function createWindows() {
         }
     });
 
+    // evil hack to fix electron 32 & 33 regression that makes devtools always light theme
+    // https://github.com/electron/electron/issues/43367
+    // TODO: remove once fixed
+    mainWin.webContents.on("devtools-opened", () => {
+        if (!nativeTheme.shouldUseDarkColors) return;
+
+        nativeTheme.themeSource = "light";
+        setTimeout(() => {
+            nativeTheme.themeSource = "dark";
+        }, 100);
+    });
+
     initArRPC();
+    initKeybinds();
+}
+
+export function getAccentColor(): Promise<string> {
+    return Promise.resolve(`#${systemPreferences.getAccentColor?.() || ""}`);
 }

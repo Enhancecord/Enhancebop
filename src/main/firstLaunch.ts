@@ -4,6 +4,7 @@
  * Copyright (c) 2023 Vendicated and Vencord contributors
  */
 
+import { exec } from "child_process";
 import { app } from "electron";
 import { BrowserWindow } from "electron/main";
 import { copyFileSync, mkdirSync, readdirSync } from "fs";
@@ -13,7 +14,7 @@ import { ICON_PATH, VIEW_DIR } from "shared/paths";
 
 import { autoStart } from "./autoStart";
 import { DATA_DIR } from "./constants";
-import { createWindows } from "./mainWindow";
+import { createWindows, getAccentColor } from "./mainWindow";
 import { Settings, State } from "./settings";
 import { makeLinksOpenExternally } from "./utils/makeLinksOpenExternally";
 
@@ -26,6 +27,11 @@ interface Data {
 }
 
 export function createFirstLaunchTour() {
+    if (process.platform === "darwin") {
+        exec(`codesign --force --deep --sign - /Applications/Equibop.app`, error => {
+            if (error) return;
+        });
+    }
     const win = new BrowserWindow({
         ...SplashProps,
         frame: true,
@@ -48,14 +54,20 @@ export function createFirstLaunchTour() {
         State.store.firstLaunch = false;
         Settings.store.discordBranch = data.discordBranch;
         Settings.store.tray = true;
-        Settings.store.trayColor = "F6BFAC";
+        getAccentColor().then(color => {
+            if (color) {
+                Settings.store.trayColor = color.slice(1);
+            } else {
+                Settings.store.trayColor = "F6BFAC";
+            }
+        });
         Settings.store.minimizeToTray = !!data.minimizeToTray;
         Settings.store.arRPC = !!data.richPresence;
 
         if (data.autoStart) autoStart.enable();
 
         if (data.importSettings) {
-            const from = join(app.getPath("userData"), "..", "Enhancecord", "settings");
+            const from = join(app.getPath("userData"), "..", "Equicord", "settings");
             const to = join(DATA_DIR, "settings");
             try {
                 const files = readdirSync(from);
